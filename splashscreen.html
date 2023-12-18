@@ -1,0 +1,56 @@
+<!-- START OF SPLASHSCREEN-->
+<body style="margin: 0; padding: 0 ;
+overflow: hidden; box-sizing: border-box;">
+    <div class="container" style="margin: 0; padding: 0;"> 
+        <div class="blur" style=" margin: 0; padding: 0; width: 100vw ; display: flex;flex-direction: column;height: 100%; align-items: center; padding-top: 253px !important;  backdrop-filter:blur(40px)">
+            <img style="margin-bottom: 30px;" class="logo" width="59" height="45"  height="">
+            <h1 style="width: 70%;font-family: Inter, sans-serif !important;
+            text-align: center;
+            font-family: Inter;
+            font-size: 25px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+            margin-bottom: 20px;
+            
+            ">Securing your connection...</h1>
+            <img class="spinner" style="transform: translateY(24px);" src="./img/spinner.gif" width="60" height="60"  height=""> 
+        </div>
+
+    </div>
+</body>
+
+<!-- END OF SPLASHSCREEN-->
+
+<script defer>
+    const backgroundColor= localStorage.getItem("background-color");
+    document.querySelector(".blur").style.background=backgroundColor;
+
+    const backgroundImg= localStorage.getItem("background-image");
+    document.querySelector(".container").style.background="url("+backgroundImg+")";
+
+    const textColor= localStorage.getItem("text-color");
+    document.querySelector(".blur").style.color=textColor;
+
+    const logo= localStorage.getItem("logo");
+    document.querySelector(".logo").src=logo;
+
+    
+      console.log("hello")
+       const isIE4 = !!document.documentMode;
+      if(isIE4){
+        var myDiv = document.querySelector('.blur');
+        var bgColor = myDiv.currentStyle.backgroundColor;
+        var newColor = bgColor.replace(/0\.2\)/, '1)');
+
+         // Display the background color in the console
+         console.log('Background Color:', newColor);
+         myDiv.style.backgroundColor = newColor;
+
+         document.getElementById(".spinner").style="none"
+      }false
+
+
+</script>
+
+
